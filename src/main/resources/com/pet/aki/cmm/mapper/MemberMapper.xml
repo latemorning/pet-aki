@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.pet.aki.cmm.mapper.MemberMapper">
+        
+    <select id="selectMemberList" parameterType="com.pet.aki.cmm.model.MemberVO" resultType="com.pet.aki.cmm.model.MemberVO">
+        select * from member
+    </select>
+    
+    <select id="selectMemberById" parameterType="java.lang.Long" resultType="com.pet.aki.cmm.model.MemberVO">
+        SELECT
+                code
+              , name
+              , team
+          FROM
+                member
+         WHERE
+                code = #{id}  
+    </select>
+    
+    <insert id="insertMember">
+    	insert into
+    	        member(
+    	                name
+    	              , team
+    	              )
+    	        values(
+    	                #{name}
+    	              , #{team}
+    	              )
+    </insert>    
+</mapper>

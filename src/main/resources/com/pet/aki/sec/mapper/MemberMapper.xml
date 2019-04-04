@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.pet.aki.sec.mapper.MemberMapper">
+        
+    <select id="selectMember" parameterType="java.lang.String" resultType="com.pet.aki.sec.domain.Member">
+        SELECT 
+                username
+              , password
+              , true AS enabled
+              , member_name AS "memberName"
+          FROM 
+                member
+         WHERE 
+                username = #{username}
+    </select>
+    
+    <select id="selectAuthorities" parameterType="java.lang.String" resultType="java.lang.String">
+    	SELECT 
+    	        a.authority_code
+    	  FROM 
+    	        member m
+    	      , authority a
+    	      , member_authority ma
+    	 WHERE 
+    	        m.username = ma.username
+    	   AND  ma.authority_code = a.authority_code
+    	   AND  m.username = #{username}
+    </select>
+</mapper>

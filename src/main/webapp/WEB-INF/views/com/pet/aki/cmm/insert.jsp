@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-hello world index</br>
-<a href="/logout">logout</a>
+hello world insert
 </body>
 </html>

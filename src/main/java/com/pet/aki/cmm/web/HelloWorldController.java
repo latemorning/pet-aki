@@ -6,15 +6,37 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class HelloWorldController {
 
-	@RequestMapping("/")
-	public String index() {
-		System.out.println("@RequestMapping(\"/\")");
-		return "index";
-	}
+    @RequestMapping("/")
+    public String index() {
 
-	@RequestMapping("/hello")
-	public String helloWorld() {
-		System.out.println("@RequestMapping(\"/hello\")");
-		return "/com/pet/aki/cmm/hello";
-	}
+        return "index";
+    }
+
+
+    @RequestMapping("/hello")
+    public String helloWorld() {
+
+        return "/com/pet/aki/cmm/hello";
+    }
+
+
+    @RequestMapping("/admin")
+    public String admin() {
+
+        return "/com/pet/aki/cmm/admin";
+    }
+
+
+    @RequestMapping("/guest")
+    public String guest() {
+
+        return "/com/pet/aki/cmm/guest";
+    }
+
+
+    @RequestMapping("/manager")
+    public String manager() {
+
+        return "/com/pet/aki/cmm/manager";
+    }
 }

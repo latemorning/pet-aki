@@ -15,9 +15,15 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	//providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	compile('javax.servlet:jstl')
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    //providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    compile('javax.servlet:jstl')
     compile("org.apache.tomcat.embed:tomcat-embed-jasper")
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.0.0'
+    runtimeOnly 'mysql:mysql-connector-java'
+    compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+	testImplementation 'org.springframework.security:spring-security-test'
 }
